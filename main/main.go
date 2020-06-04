@@ -1,12 +1,16 @@
 package main
 
-import "github.com/vigneshrajkumar/ig/server"
+import (
+	"instagram/server"
+
+	"github.com/golang/glog"
+)
 
 // start of the program
 func main() {
 	err := server.StartServer()
 	if err != nil {
-		log.Errorln("Error due to starting the server", err)
+		glog.Errorln("Error due to starting the server", err)
 		return
 	}
 }

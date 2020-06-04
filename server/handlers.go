@@ -2,42 +2,66 @@ package server
 
 import "net/http"
 
-// Handlers
-
-// read requests
-func getFeeds(res http.ResponseWriter, req *http.Request) {
-	res.Write([]byte("getFeeds"))
+func createUser(res http.ResponseWriter, req *http.Request) {
+	res.Write([]byte("sucess"))
 }
 
-func getFollowers(res http.ResponseWriter, req *http.Request) {
-	res.Write([]byte("getFollowers"))
+func deleteUser(res http.ResponseWriter, req *http.Request) {
+	res.Write([]byte("sucess"))
 }
 
-func getFollowees(res http.ResponseWriter, req *http.Request) {
-	res.Write([]byte("getFollowees"))
+func getAllUser(res http.ResponseWriter, req *http.Request) {
+	res.Write([]byte("sucess"))
 }
 
-// write requests
-func addPost(res http.ResponseWriter, req *http.Request) {
-	res.Write([]byte("addPost"))
+func putUniqueUserPost(res http.ResponseWriter, req *http.Request) {
+	res.Write([]byte("sucess"))
 }
 
-func deletePost(res http.ResponseWriter, req *http.Request) {
-	res.Write([]byte("deletePost"))
+func deleteUniqueUserPost(res http.ResponseWriter, req *http.Request) {
+	res.Write([]byte("sucess"))
 }
 
-func addComment(res http.ResponseWriter, req *http.Request) {
-	res.Write([]byte("addComment"))
+func getUniqueUserPost(res http.ResponseWriter, req *http.Request) {
+	res.Write([]byte("sucess"))
 }
 
-func deleteComment(res http.ResponseWriter, req *http.Request) {
-	res.Write([]byte("deleteComment"))
+func getUniqueUserProfile(res http.ResponseWriter, req *http.Request) {
+	res.Write([]byte("sucess"))
 }
 
-func follow(res http.ResponseWriter, req *http.Request) {
-	res.Write([]byte("follow"))
+func followUser(res http.ResponseWriter, req *http.Request) {
+	res.Write([]byte("sucess"))
 }
 
-func unFollow(res http.ResponseWriter, req *http.Request) {
-	res.Write([]byte("unFollow"))
+func unfollowUser(res http.ResponseWriter, req *http.Request) {
+	res.Write([]byte("sucess"))
+}
+
+func getUniqueUserFollowers(res http.ResponseWriter, req *http.Request) {
+	res.Write([]byte("sucess"))
+}
+
+func getUniqueUserFollowings(res http.ResponseWriter, req *http.Request) {
+	res.Write([]byte("sucess"))
+}
+
+func getUniqueUserFeeds(res http.ResponseWriter, req *http.Request) {
+	res.Write([]byte("sucess"))
+}
+
+func getAllPosts(res http.ResponseWriter, req *http.Request) {
+	res.Write([]byte("sucess"))
+}
+
+func putUniquePostComment(res http.ResponseWriter, req *http.Request) {
+	res.Write([]byte("sucess"))
+}
+
+func deleteUniquePostComment(res http.ResponseWriter, req *http.Request) {
+	res.Write([]byte("sucess"))
+}
+
+func getUniquePostComment(res http.ResponseWriter, req *http.Request) {
+	res.Write([]byte("sucess"))
 }

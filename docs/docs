@@ -1,0 +1,75 @@
+Use Cases Build 1.0:
+- Ability to create & delete user account
+- ability to reset fogotten password
+- App accessable only after login.
+- user gets a feed of posts posted by other users [Timeline]
+- users gets to search other users by name, email [Search]
+- user gets to follow and unfollow other users [Followiblity]
+- users gets to block users [Blocking]
+- users gets to mute users [Muting]
+- user gets to post photos and videos [Posting]
+- user gets to like other's posts
+- user gets to comment on posts as a user and as well as a guest [Commenting]
+- user gets to update his profile information
+
+
+API V1.0 Endpoints:
+
+/* Auth Routes*/
+GET / # landling and login page
+POST /login  # posting credentials
+GET /logout 
+
+/* Feature Routes*/
+GET /timeline 
+
+GET /users/:id
+PUT /users/:id
+DELETE /users/:id
+
+GET /users/:id/posts
+POST /users/:id/posts
+PUT /users/:id/posts/:id
+DELETE /users/:id/posts/:id
+
+GET /users/:id/posts/:id/comments
+POST /users/:id/posts/:id/comments
+PUT /users/:id/posts/:id/comments/:id
+DELETE /users/:id/posts/:id/comments/:id 
+
+GET /search?name=baradan&&?email=baradan@gmail.com
+
+DBMS Schema:
+
+ig.user
+    id BIGINT (PRIMARY KEY)
+    name VARCHAR(255)
+    email VARCHAR(255)
+    profile_picture BLOB
+    bio VARCHAR(255)
+    session_key VARCHAR(255)
+
+ig.post
+    id BIGINT (PRIMARY KEY)
+    content BLOB
+    caption VARCHAR(255)
+    posted_by BIGINT (FOREIGN KEY ig.user.id)
+    timestamp TIMESTAMP
+
+ig.comment
+    id BIGINT (PRIMARY KEY)
+    is_guest BOOLEAN
+    content VARCHAR(255)
+    posted_on BIGINT (FOREIGN KEY ig.post.id)
+    commented_by BIGINT (FOREIGN KEY ig.user.id)
+    timestamp TIMESTAMP
+
+ig.liking
+    liked_by BIGINT (FOREIGN KEY ig.user.id)
+    liked_post BIGINT (FOREIGN KEY ig.post.id)
+
+ig.followership
+    left BIGINT (FOREIGN KEY ig.user.id)
+    right BIGINT (FOREIGN KEY ig.user.id)
+    is_muted BOOLEAN
+    is_blocked BOOLEAN

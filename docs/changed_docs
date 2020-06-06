@@ -1,0 +1,110 @@
+Pages:
+	1.SignUp Page
+	2.Login Page
+	3.Forget Password Page
+	4.Feed Page
+	5.Profile Page
+	6.EditUser Page
+	7.Post Edit/Creation Page
+	8.Search User Page
+	9.Settings Page
+
+Activities:
+	1.SignUpPage
+		1.Ability to create a user account -> redirect to LoginPage
+	2.LoginPage
+		1.Ability to login to a user account -> redirect to FeedPage
+		2.Click for forget password -> Forget PasswordPage
+		3.Click for sign up page -> SignUpPage
+	3.ForgetPasswordPage
+		1.Ability to set new password -> redirect to LoginPage
+	4.FeedPage
+		1.Ability to view the his/others feeds
+		2.Ability to view comments
+		3.Ability to Comment/UnComment the post
+		4.Ability to Like/Unlike the post
+		5.Click to view his/others profile -> ProfilePage
+		6.Click to search the user -> SearchUserPage
+		7.Click to create a post -> PostEdit/CreationPage
+		8.Click to settings -> SettingsPage
+	5.Profile Page
+		1.Ability to view his/others profile
+		2.Click to update a post -> PostEdit/CreationPage(It is enabled if it is own user)
+		3.Ability to delete a post
+		4.Click to view followers/followings -> SearchUserPage
+		5.Click to edit the user information ->EditUserPage(It is enabled if it is own user)
+		6.Ability to follow/unfollow a user - optional(It is enabled only if it is other user profile)
+		7.Ability to block/unblock a user - optional(It is enabled only if it is other user profile)
+		8.Ability to mute/unmute a user - optional(It is enabled only if it is other user profile)
+		9.Ability to click on a post - optional(It is enabled only if it is other user profile) - redirect FeedPage
+	6.EditUserPage
+		1.Ability to edit user profile -> redirect to ProfilePage
+	7.PostEdit/CreationPage
+		1.Ability to edit a post -> redirect to Feed Page
+		2.Ability to create a post -> redirect to Feed Page
+	8.SearchUserPage
+		1.Ability to view all followers/followings/users
+		2.Ability to follow/unfollow a user
+		3.Ability to mute/unmute a user
+		4.Ability to block/unblock a user
+		5.Click to view user profile -> Profile Page
+	9.SettingsPage
+		1.Ability to logout
+		2.Ability to delete user account
+
+API Endpoints:
+	1		GET		/static/sign_up_page
+	1.1		POST 	/users/
+	2		GET		/static/login_page
+	2.1		POST 	/login/
+	2.2		GET		/static/forget_password_page
+	2.3		GET		/static/sign_up_page
+	3		GET		/static/forget_password_page
+	3.1		
+	4		GET		/static/feed_page
+	4.1.1	GET		/feeds/
+	4.1.2	GET		/users/:user_id/feeds/
+	4.2 	GET 	/posts/:post_id/comments
+	4.3.1	POST 	/posts/:post_id/comments
+	4.3.2	DELETE 	/posts/:post_id/comments/:comment_id
+	4.4.1	POST 	/posts/:post_id/likes
+	4.4.2	DELETE 	/posts/:post_id/likes
+	4.5		GET		/static/profile_page
+	4.6		GET		/static/search_user_page
+	4.7		GET		/static/post_edit_page
+	4.8		GET		/static/settings_page
+	5		GET		/static/profile_page
+	5.1.1	GET		/profile
+	5.1.2	GET		/users/:user_id/profile
+	5.2		GET		/static/post_edit_creation_page
+	5.3		DELETE 	/posts/:post_id
+	5.4		GET		/static/search_user_page
+	5.5		GET		/static/edit_user_page
+	5.6.1	POST 	/users/:user_id/follow
+	5.6.2	DELETE 	/users/:user_id/follow
+	5.7.1	POST 	/users/:user_id/mute
+	5.7.2	DELETE 	/users/:user_id/mute
+	5.8.1	POST 	/users/:user_id/block
+	5.8.2	DELETE 	/users/:user_id/block
+	5.9		GET		/static/feed_page
+	6		GET		/static/edit_user_page
+	6.1		PUT		/Users/profile
+	7		GET		/static/post_edit_creation_page
+	7.1		PUT		/posts/:post_id
+	7.2		POST 	/posts/
+	8		GET		/static/search_user_page
+	8.1.1.1	GET		/followers
+	8.1.1.2	GET		/users/:user_id/followers
+	8.1.2.1	GET		/followings
+	8.1.2.2	GET		/users/:user_id/followings
+	8.1.3	GET		/users/
+	8.2.1	POST 	/users/:user_id/follow
+	8.2.2	DELETE 	/users/:user_id/follow
+	8.3.1	POST 	/users/:user_id/mute
+	8.3.2	DELETE 	/users/:user_id/mute
+	8.4.1	POST 	/users/:user_id/block
+	8.4.2	DELETE 	/users/:user_id/block
+	8.5		GET		/static/user_profile_page
+	9		GET		/static/settings_page
+	9.1		POST 	/logout
+	9.2		DELETE 	/users
